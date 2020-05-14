@@ -1,3 +1,6 @@
+console.log("I am working!!");
+
+
 var inquirer = require('inquirer');
 const fs = require('fs');
 // use the generatePage function from module 9 and point to the correct file
