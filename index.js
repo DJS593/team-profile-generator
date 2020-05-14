@@ -1,10 +1,6 @@
-console.log("I am working!!");
-
-
 var inquirer = require('inquirer');
 const fs = require('fs');
-// use the generatePage function from module 9 and point to the correct file
-//const generatePage = require('./util/generateMarkdown.js');
+const generatePage = require('./src/generateHtml.js');
 
 const promptUser = () => { 
   return inquirer.prompt([
@@ -54,7 +50,7 @@ const promptUser = () => {
       // manager's office number
       type: 'input',
       name: 'manager office number',
-      message: "What is the team manager's email? (Required)",
+      message: "What is the team manager's office number? (Required)",
       validate: managerOffice => {
         if (managerOffice) {
           return true;
@@ -68,11 +64,14 @@ const promptUser = () => {
 
 promptUser()
   .then(portfolioData => {
-    return generatePage(portfolioData);
+    return generatePage(portfolioData)
   })
   .then(pageHTML => {
     return writeFile(pageHTML);
   })
+  //.then(pageCSS => {
+    //return writeFile(pageCCS);
+  //})
   .then(writeFileResponse => {
     console.log(writeFileResponse);
   })
@@ -83,17 +82,32 @@ promptUser()
   
 // print user input to a generator.html so team info can be displayed
 
-const writeFile = fileContent => {
+const writeFile = pageHTML => {
   return new Promise((resolve, reject) => {
-    fs.writeFile('./generator.html', fileContent, err => {
+    fs.writeFile('./dist/generator.html', pageHTML, err => {
       if (err) {
         reject(err);
         return;
       }
       resolve({
         ok: true,
-        message: 'File Created!'
+        message: 'HTML File Created!'
       });
     });
   });
 };
+
+// const writeFile = pageCSS => {
+//   return new Promise((resolve, reject) => {
+//     fs.writeFile('./dist/generator.css', pageCSS, err => {
+//       if (err) {
+//         reject(err);
+//         return;
+//       }
+//       resolve({
+//         ok: true,
+//         message: 'CSS File Created!'
+//       });
+//     });
+//   });
+// };
