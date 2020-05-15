@@ -9,7 +9,7 @@ const generateCSS = templateData => {
   // generator.css file structure and linked data
 
   return `
-  .main-container {  test 4
+  .main-container { 
     height: 600px;
     background-color: lightblue;
   }
