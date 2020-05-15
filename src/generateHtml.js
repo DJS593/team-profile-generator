@@ -1,6 +1,6 @@
 // pull in the data for generator.html
   
-const generatePage = templateData => {
+const generateHTML = templateData => {
 
   // redefine this variable and parameters // let { title, description, installation, usage, contribution, test, email, username, license } = templateData;
   
@@ -9,7 +9,7 @@ const generatePage = templateData => {
   // generator.html file structure and linked data
 
   return `
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -126,5 +126,5 @@ const generatePage = templateData => {
 };
 
 
-module.exports = generatePage;
+module.exports = generateHTML;
 

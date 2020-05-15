@@ -1,15 +1,5 @@
-// generateCSS provides the template for the CSS file
-  
-const generateCSS = templateData => {
 
-  // redefine this variable and parameters // let { title, description, installation, usage, contribution, test, email, username, license } = templateData;
-  
-  
-  
-  // generator.css file structure and linked data
-
-  return `
-  .main-container {  test 4
+  .main-container {  
     height: 600px;
     background-color: lightblue;
   }
@@ -50,8 +40,4 @@ const generateCSS = templateData => {
     list-style: none;
     padding-left: none;
   }
-  `;
-};
-
-
-module.exports = generateCSS;
+  

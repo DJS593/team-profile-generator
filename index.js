@@ -1,6 +1,7 @@
 var inquirer = require('inquirer');
 const fs = require('fs');
-const generatePage = require('./src/generateHtml.js');
+const generateHTML = require('./src/generateHtml.js');
+const generateCSS = require('./src/generateCss.js');
 
 const promptUser = () => { 
   return inquirer.prompt([
@@ -62,29 +63,38 @@ const promptUser = () => {
   ])
 };
 
+
+
+
 promptUser()
   .then(portfolioData => {
-    return generatePage(portfolioData)
+    return generateHTML(portfolioData);
   })
-  .then(pageHTML => {
-    return writeFile(pageHTML);
+  .then(generateHTML => {
+    return writeFileHTML(generateHTML);
   })
-  //.then(pageCSS => {
-    //return writeFile(pageCCS);
-  //})
-  .then(writeFileResponse => {
-    console.log(writeFileResponse);
+  .then(writeFileHTMLResponse => {
+    console.log(writeFileHTMLResponse);
   })
-    .catch(err => {
-    console.log(err);
-  }); 
+  .then(portfolioData => {
+    return generateCSS(portfolioData);
+  })
+  .then(generateCSS => {
+    return writeFileCSS(generateCSS);
+  })
+  .then(writeFileCSSResponse => {
+    console.log(writeFileCSSResponse);
+  })
+  .catch(err => {
+  console.log(err);
+  });
   
   
-// print user input to a generator.html so team info can be displayed
+// print user input to generator.html so team info can be displayed
 
-const writeFile = pageHTML => {
+const writeFileHTML = generateHTML => {
   return new Promise((resolve, reject) => {
-    fs.writeFile('./dist/generator.html', pageHTML, err => {
+    fs.writeFile('./dist/generator.html', generateHTML, err => {
       if (err) {
         reject(err);
         return;
@@ -95,19 +105,21 @@ const writeFile = pageHTML => {
       });
     });
   });
-};
+}; 
+  
+// create CSS file to format generator.html
 
-// const writeFile = pageCSS => {
-//   return new Promise((resolve, reject) => {
-//     fs.writeFile('./dist/generator.css', pageCSS, err => {
-//       if (err) {
-//         reject(err);
-//         return;
-//       }
-//       resolve({
-//         ok: true,
-//         message: 'CSS File Created!'
-//       });
-//     });
-//   });
-// };
+const writeFileCSS = generateCSS => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile('./dist/generator.css', generateCSS, err => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve({
+        ok: true,
+        message: 'CSS File Created!'
+      });
+    });
+  });
+};   
