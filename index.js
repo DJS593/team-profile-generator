@@ -1,7 +1,7 @@
 // modules
 const inquirer = require("inquirer");
 const fs = require("fs");
-const style = require("./src/generateCss")
+const styleSheet = require("./src/generateCss")
 
 // Class files
 const Employee = require("./lib/Employee")
@@ -282,7 +282,7 @@ compileTeam = () => {
     <title>Team Roster</title>
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
-     ${style}
+     ${styleSheet}
     </style>
 </head>
 <body>
