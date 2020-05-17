@@ -1,9 +1,9 @@
 // pull in the data for generator.html
   
-const generateHTML = templateData => {
-  console.log(templateData);
+const teamComplete = employeeArray => {
+  console.log(employeeArray);
 
-  let { managerName, managerId, managerEmail, managerOffice } = templateData;
+  //let { name, id, email, office } = employeeArray[0];
   
   
   
@@ -12,6 +12,7 @@ const generateHTML = templateData => {
   return `
 <!DOCTYPE html>  
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,11 +47,11 @@ const generateHTML = templateData => {
         <div class="card-deck col-4">
           <div class="card text-white bg-primary">
             <div class="card-body employee-info">
-              <h5 class="card-title name">${managerName}</h5>
-              <p class="card-text role">Role</p>
-              <p class="card-text id">${managerId}</p>
-              <p class="card-text email">${managerEmail}</p>
-              <p class="card-text other">${managerOffice}</p>
+              <h5 class="card-title name"></h5>
+              <p class="card-text role">insert manager role</p>
+              <p class="card-text id">insert manager id</p>
+              <p class="card-text email">insert manager email</p>
+              <p class="card-text other">insert manager office number</p>
             </div>
           </div>
         </div>
@@ -127,5 +128,5 @@ const generateHTML = templateData => {
 };
 
 
-module.exports = generateHTML;
+module.exports = teamComplete;
 

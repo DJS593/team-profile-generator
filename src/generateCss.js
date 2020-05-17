@@ -1,6 +1,6 @@
 // generateCSS provides the template for the CSS file
   
-const generateCSS = templateData => {
+const generateCSS = data => {
 
   // redefine this variable and parameters // let { title, description, installation, usage, contribution, test, email, username, license } = templateData;
   
