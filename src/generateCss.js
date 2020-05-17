@@ -1,57 +1,113 @@
-// generateCSS provides the template for the CSS file
-  
-const generateCSS = data => {
 
-  // redefine this variable and parameters // let { title, description, installation, usage, contribution, test, email, username, license } = templateData;
   
-  
-  
-  // generator.css file structure and linked data
+  // css attributes that will be linked into the HTML page
 
-  return `
-  .main-container { 
-    height: 600px;
-    background-color: lightblue;
-  }
+// const cssAttributes = `
   
-  .header {
-    background-color: red;
-    color: white;
-    text-align: center;
-    height: 100px;
-  }
+//   .main-container { 
+//     height: 600px;
+//     background-color: lightblue;
+//   }
   
-  .header-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
+//   .header {
+//     background-color: red;
+//     color: white;
+//     text-align: center;
+//     height: 100px;
+//   }
   
-  .container {
-    height: 100%;
-  }
+//   .header-title {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100%;
+//   }
   
-  .row {
-    display: flex;
-    justify-content: space-evenly;
-  }
+//   .container {
+//     height: 100%;
+//   }
   
-  .span {
-    width: 100%;
-    color: black;
-  }
+//   .row {
+//     display: flex;
+//     justify-content: space-evenly;
+//   }
   
-  .list-group-item {
-    padding: 0px;
-  }
+//   .span {
+//     width: 100%;
+//     color: black;
+//   }
+  
+//   .list-group-item {
+//     padding: 0px;
+//   }
     
-  .employee-info {
-    list-style: none;
-    padding-left: none;
+//   .employee-info {
+//     list-style: none;
+//     padding-left: none;
+//   }
+//   `;
+
+  const cssAttributes = `
+  html, body {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
   }
-  `;
-};
-
-
-module.exports = generateCSS;
+  body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .banner-bar {
+      background-color: rgba(53, 124, 109, 0.842);
+      width: 100%;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20vh;
+  }
+  h1 {
+      font-family: Bebas Neue;
+      font-size: 8vw;
+  }
+  p {
+      font-family: 'Roboto Condensed', sans-serif;
+      position: relative;
+      left: 12px;
+  }
+  h2 {
+      font-family: 'Roboto Condensed', sans-serif;
+      position: relative;
+      font-size: 17px;
+      left: 12px;
+  }
+  .member-card {
+      width: 250px;
+      height: 34vh;
+      margin-bottom: 5vh;
+      background-color: rgb(240, 238, 238);
+      box-shadow: 2px 5px 5px black;
+      border-top-left-radius: 10px;
+  }
+  .card-container {
+      position: absolute;
+      top: 26vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 60vw;
+  }
+  .card-top {
+      background-color: rgb(228, 174, 76);
+      border: 2px solid rgb(228, 174, 76);
+      width: 246px;
+      border-top-left-radius: 10px;
+  }
+  .card-bottom {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+  }
+  `
+  
+module.exports = cssAttributes;
