@@ -1,8 +1,9 @@
 // pull in the data for generator.html
   
 const generateHTML = templateData => {
+  console.log(templateData);
 
-  // redefine this variable and parameters // let { title, description, installation, usage, contribution, test, email, username, license } = templateData;
+  let { managerName, managerId, managerEmail, managerOffice } = templateData;
   
   
   
@@ -45,11 +46,11 @@ const generateHTML = templateData => {
         <div class="card-deck col-4">
           <div class="card text-white bg-primary">
             <div class="card-body employee-info">
-              <h5 class="card-title name">David Stahl</h5>
+              <h5 class="card-title name">${managerName}</h5>
               <p class="card-text role">Role</p>
-              <p class="card-text id">ID</p>
-              <p class="card-text email">Email</p>
-              <p class="card-text other">Other</p>
+              <p class="card-text id">${managerId}</p>
+              <p class="card-text email">${managerEmail}</p>
+              <p class="card-text other">${managerOffice}</p>
             </div>
           </div>
         </div>
