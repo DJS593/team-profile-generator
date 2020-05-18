@@ -1,53 +1,7 @@
+// The generateCss.js file provides additonal CSS formatting for the HTML page
 
-  
-  // css attributes that will be linked into the HTML page
-
-// const cssAttributes = `
-  
-//   .main-container { 
-//     height: 600px;
-//     background-color: lightblue;
-//   }
-  
-//   .header {
-//     background-color: red;
-//     color: white;
-//     text-align: center;
-//     height: 100px;
-//   }
-  
-//   .header-title {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 100%;
-//   }
-  
-//   .container {
-//     height: 100%;
-//   }
-  
-//   .row {
-//     display: flex;
-//     justify-content: space-evenly;
-//   }
-  
-//   .span {
-//     width: 100%;
-//     color: black;
-//   }
-  
-//   .list-group-item {
-//     padding: 0px;
-//   }
-    
-//   .employee-info {
-//     list-style: none;
-//     padding-left: none;
-//   }
-//   `;
-
-  const cssAttributes = `
+const styleSheet = 
+  `
   html, body {
       max-width: 100% !important;
       overflow-x: hidden !important;
@@ -67,7 +21,7 @@
       height: 15vh;
   }
   h1 {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: source, sans-serif;
       font-size: 40px;
   }
   p {
@@ -87,7 +41,7 @@
       margin-bottom: 20px;
       background-color: white;
       box-shadow: 2px 5px 5px black;
-      border-top-left-radius: 10px;
+      border-radius: 10px;
   }
   .card-container {
       position: absolute;
@@ -111,4 +65,4 @@
   }
   `
   
-module.exports = cssAttributes;
+module.exports = styleSheet;
